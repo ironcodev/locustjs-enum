@@ -133,6 +133,10 @@ describe('locustjs-enum test suite: testing BaseEnum', function() {
      expect(Color.getString(2)).toEqual('blue');
   });
   
+  it(`Color.getString('2')`, function() {
+     expect(Color.getString('2')).toEqual('blue');
+  });
+  
   it(`Color.getString('blue')`, function() {
      expect(Color.getString('blue')).toEqual('blue');
   });

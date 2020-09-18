@@ -77,7 +77,9 @@ class BaseEnum {
 		let result = this.isValid(value) ? value: defaultValue ? defaultValue: undefined;
 		
 		if (result != undefined) {
-			if (typeof result != 'string') {
+			if (isNumeric(result)) {
+				result = this[parseInt(result)];
+			} else if (typeof result != 'string') {
 				result = this[result];
 			}
 		}

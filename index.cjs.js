@@ -118,7 +118,9 @@ var BaseEnum = /*#__PURE__*/function () {
       var result = this.isValid(value) ? value : defaultValue ? defaultValue : undefined;
 
       if (result != undefined) {
-        if (typeof result != 'string') {
+        if ((0, _locustjsBase.isNumeric)(result)) {
+          result = this[parseInt(result)];
+        } else if (typeof result != 'string') {
           result = this[result];
         }
       }
