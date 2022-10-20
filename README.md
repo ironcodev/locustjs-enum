@@ -41,8 +41,17 @@ console.log(Color.getNames());  // ['red', 'green', 'blue']
 console.log(Color.getValues()); // [0, 1, 2]
 console.log(Color.toArray()); // [{ name: 'red', value: 0 }, { name: 'green', value: 1 }, { name: 'blue', value: 2 }]
 
+console.log('Testing enum value equality ...');
+
+// 1. using Enum.equals
 console.log(Enum.equals(Color, 1, 'green'));   // true
 console.log(Enum.equals(Color, '1', Color.green)); // true
 console.log(Enum.equals(Color, 1, 'Green'));   // false
 console.log(Enum.equals(Color, 'green', Color.red)); // false
+
+// 2. using equals() in enum type
+console.log(Color.equals(1, 'green'));   // true
+console.log(Color.equals('1', Color.green)); // true
+console.log(Color.equals(1, 'Green'));   // false
+console.log(Color.equals('green', Color.red)); // false
 ```
