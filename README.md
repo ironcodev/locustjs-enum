@@ -41,8 +41,8 @@ console.log(Color.getNames());  // ['red', 'green', 'blue']
 console.log(Color.getValues()); // [0, 1, 2]
 console.log(Color.toArray()); // [{ name: 'red', value: 0 }, { name: 'green', value: 1 }, { name: 'blue', value: 2 }]
 
-console.log(Enum.equals(Color(1, 'green'));   // true
-console.log(Enum.equals(Color('1', Color.green)); // true
-console.log(Enum.equals(Color(1, 'Green'));   // false
-console.log(Enum.equals(Color('green', Color.red)); // false
+console.log(Enum.equals(Color, 1, 'green'));   // true
+console.log(Enum.equals(Color, '1', Color.green)); // true
+console.log(Enum.equals(Color, 1, 'Green'));   // false
+console.log(Enum.equals(Color, 'green', Color.red)); // false
 ```
