@@ -1,5 +1,5 @@
 import Enum from '../index.esm.js'
-import { isSomeString } from 'locustjs-base';
+import { isSomeString } from '@locustjs/base';
 
 // -------------- BaseEnum -----------------
 describe('locustjs-enum test suite: testing BaseEnum', function() {

@@ -1,4 +1,4 @@
-import { isArray, isPrimitive, isSomeObject, isNumeric } from 'locustjs-base';
+import { isArray, isPrimitive, isSomeObject, isNumeric } from '@locustjs/base';
 
 class BaseEnum {
     constructor(values, name) {
