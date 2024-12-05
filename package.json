@@ -1,6 +1,6 @@
 {
   "name": "@locustjs/enum",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "This library provides utilities to define enumeration objects similar to enums in other languages such as C# or Java",
   "main": "index.cjs.js",
   "module": "index.esm.js",

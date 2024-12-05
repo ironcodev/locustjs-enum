@@ -1,8 +1,9 @@
 import { isArray, isPrimitive, isSomeObject, isNumeric } from '@locustjs/base';
 
+const NameProp = Symbol()
 class BaseEnum {
     constructor(values, name) {
-        this.name = name;
+        this[NameProp] = name;
 
         if (isArray(values)) {
             for (let i; i < values.length; i++) {
@@ -27,11 +28,14 @@ class BaseEnum {
     equals(value1, value2) {
         return Enum.equals(this, value1, value2);
     }
+    get name() {
+        return this[NameProp]
+    }
 	getNames() {
 		let result = [];
 
         for (let key of Object.keys(this)) {
-            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key) && key != 'name') {
+            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key)) {
                 result.push(key)
             }
         }
@@ -42,7 +46,7 @@ class BaseEnum {
         let result = [];
 
         for (let key of Object.keys(this)) {
-            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key) && key != 'name') {
+            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key)) {
                 result.push(this[key])
             }
         }
@@ -53,7 +57,7 @@ class BaseEnum {
         let result = [];
 
         for (let key of Object.keys(this)) {
-            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key) && key != 'name') {
+            if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key)) {
                 result.push({ name: key, value: this[key] })
             }
         }
@@ -66,7 +70,7 @@ class BaseEnum {
 	getString(value, defaultValue) {
 		if (!this.isValid(defaultValue)) {
 			for (let key of Object.keys(this)) {
-				if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key) && key != 'name') {
+				if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key)) {
 					defaultValue = key;
 					
 					break;
@@ -89,7 +93,7 @@ class BaseEnum {
 	getNumber(value, defaultValue) {
 		if (!this.isValid(defaultValue)) {
 			for (let key of Object.keys(this)) {
-				if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key) && key != 'name') {
+				if (typeof key == 'string' && isPrimitive(this[key]) && !isNumeric(key)) {
 					defaultValue = key;
 					
 					break;
