@@ -1,9 +1,33 @@
-# locustjs-enum
-This library provides utilities to define C# enum like objects
+# About
+This library provides utilities to define C# enum like objects.
+
+# Install
+```
+npm i @locustjs/enum
+```
+
+Current version:
+```
+3.0.0
+```
+
+# Usage
+
+CommonJs
+```javascript
+var someFn = require('@locustjs/enum').someFn;
+```
+
+ES6
+```javascript
+import { someFn } from '@locustjs/enum'
+```
 
 example:
 
 ```javascript
+import { Enum } from '@locustjs/enum';
+
 const Color = Enum.define({ red: 0, green: 1, blue: 2}, 'Color');
 
 console.log(Color.name);    // Color

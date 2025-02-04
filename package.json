@@ -1,12 +1,12 @@
 {
   "name": "@locustjs/enum",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "This library provides utilities to define enumeration objects similar to enums in other languages such as C# or Java",
-  "main": "index.cjs.js",
-  "module": "index.esm.js",
+  "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "build": "babel index.esm.js -o index.cjs.js",
-    "test": "babel-node test-run.js"
+    "build": "rollup -c",
+    "test": "node -r esm test-run.js"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,13 @@
   },
   "homepage": "https://github.com/ironcodev/locustjs-enum#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-env": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "esm": "^3.2.25",
+    "rollup": "^4.29.1",
     "jasmine": "^3.5.0"
   },
   "dependencies": {
-    "@locustjs/base": "^2.1.0"
+    "@locustjs/base": "^4.4.1"
   }
 }
